@@ -1,4 +1,4 @@
-# prog-str-Angel_Hernandez-2c devg 
+# prog-str-Angel_Hernandez-2c dev
 
 ## Este es el repositorio del cuatrimestre, lo vamos usar para guardar trabajas 
 ## 2c
