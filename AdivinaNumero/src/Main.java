@@ -11,9 +11,7 @@ public class Main {
         int limiteIntentos = 7;
         boolean gano = false;
         int secreto= random.nextInt(100)+1; //sirve para genrar un numero entero entre 1...100
-        System.out.println(secreto);
         System.out.println("Adivina el numero (1-100) "+"tienes: "+limiteIntentos+" para lograrlo" );
-
         while(intentos<limiteIntentos){
             int numero=obtenerNumeroValido("Intento: "+(intentos+1),sc,min,max); //vamos a crear metodo para pedir un numero valido
             intentos++;
