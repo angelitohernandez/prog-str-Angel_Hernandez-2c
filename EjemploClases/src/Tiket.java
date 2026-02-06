@@ -4,7 +4,6 @@ public class Tiket {
 
     }//Constructor por default
 
-
     private final double DESCUENTO = 0.10;
     private final double PRECIO = 10;
     public double subtotal;
