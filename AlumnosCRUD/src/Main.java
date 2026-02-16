@@ -96,18 +96,13 @@ public class Main {
         } else {
             System.out.println("No encontrado");
         }
-
     }
-
     public static void actualizarPromedio() {
 
         System.out.print("ID: ");
         int id = sc.nextInt();
-
         int pos = buscarPosicion(id);
-
         if(pos != -1 && alumnos[pos].activo) {
-
             System.out.print("Nuevo promedio: ");
             double promedio = sc.nextDouble();
 
@@ -115,38 +110,27 @@ public class Main {
                 System.out.println("Promedio invalido");
                 return;
             }
-
             alumnos[pos].promedio = promedio;
             System.out.println("Promedio actualizado");
-
         } else {
-
             System.out.println("No encontrado");
-
         }
 
     }
-
     public static void bajaLogica() {
 
         System.out.print("ID: ");
         int id = sc.nextInt();
-
         int posicion = buscarPosicion(id);
 
         if(posicion != -1 && alumnos[posicion].activo) {
 
             alumnos[posicion].activo = false;
             System.out.println("Alumno dado de baja");
-
         } else {
-
             System.out.println("No encontrado");
-
         }
-
     }
-
     public static void listar() {
 
         System.out.println("\nAlumnos activos");
@@ -160,7 +144,6 @@ public class Main {
                                 alumnos[i].nombre + " " +
                                 alumnos[i].promedio
                 );
-
             }
         }
     }
@@ -171,18 +154,13 @@ public class Main {
         Alumno menor = null;
         int mayores8 = 0;
         for(int i=0; i<alumnos.length; i++) {
-
             if(alumnos[i] != null && alumnos[i].activo) {
-
                 suma += alumnos[i].promedio;
                 cont++;
-
                 if(mayor == null || alumnos[i].promedio > mayor.promedio)
                     mayor = alumnos[i];
-
                 if(menor == null || alumnos[i].promedio < menor.promedio)
                     menor = alumnos[i];
-
                 if(alumnos[i].promedio >= 8)
                     mayores8++;
             }
@@ -197,7 +175,6 @@ public class Main {
         System.out.println("Menor promedio:");
         System.out.println(menor.id + " " + menor.nombre + " " + menor.promedio);
         System.out.println("Alumnos >= 8: " + mayores8);
-
     }
     public static int buscarPosicion(int id) {
         for(int i=0; i<alumnos.length; i++) {
