@@ -17,12 +17,12 @@ public class AppController {
     private Label lblMsg;
     @FXML
     private ListView<String> listView;
-
     @FXML
-    private TextField txtNombre;
+    private TextField txtName;
     @FXML
     private TextField txtEmail;
-
+    @FXML
+    private TextField txtAge;
 
     private ObservableList<String> data = FXCollections.observableArrayList();
     PersonService service= new PersonService();
@@ -38,23 +38,42 @@ public class AppController {
         loadFromFile();
     }
 
+    {
+
+    }
+
+
     @FXML
-    public void onAddPerson(){
-        try{
-            String name =txtNombre.getText();
-            String email =txtEmail.getText();
-            service.addPerson(name,email);
-            lblMsg.setText("Usuario Creado correctamente");
+    public void onAddPerson() {
+        try {
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+
+
+            int age = Integer.parseInt(txtAge.getText());
+
+
+            service.addPerson(name, email, age);
+
+            lblMsg.setText("Usuario ingresado correctamente");
             lblMsg.setStyle("-fx-text-fill: green");
-            txtNombre.clear();
+
+
+            txtName.clear();
             txtEmail.clear();
+            txtAge.clear();
             loadFromFile();
 
-        }catch (IOException e){
-            lblMsg.setText("Error de archivo" + e.getMessage());
+        } catch (NumberFormatException e) {
+
+            lblMsg.setText("Error: La edad debe ser un número");
             lblMsg.setStyle("-fx-text-fill: red");
-        }catch (IllegalArgumentException e){
-            lblMsg.setText("Error de datos" + e.getMessage());
+        } catch (IllegalArgumentException e) {
+
+            lblMsg.setText(e.getMessage());
+            lblMsg.setStyle("-fx-text-fill: red");
+        } catch (IOException e) {
+            lblMsg.setText("Error de archivo: " + e.getMessage());
             lblMsg.setStyle("-fx-text-fill: red");
         }
     }

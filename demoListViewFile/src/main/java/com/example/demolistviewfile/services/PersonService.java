@@ -24,10 +24,32 @@ public class PersonService {
         return result;
     }
 
-    public void addPerson(String name, String email) throws IOException {
-        repo.addNewLine(name+","+email);
-    }
-    private void validate(String name, String email){
+    public void addPerson(String name, String email, int age) throws IOException {
+        validate(name, email, age);
 
+
+        repo.addNewLine(name + "," + email + "," + age);
     }
-}
+
+    private void validate(String name, String email, int age) {
+
+        if (name == null || name.isBlank() || name.length() < 3) {
+            throw new IllegalArgumentException("El nombre es incorrecto");
+        }
+
+
+        String em = (email == null) ? "" : email.trim();
+        if (em.isBlank() || !em.contains("@") || !em.contains(".")) {
+            throw new IllegalArgumentException("El email es inválido");
+        }
+
+
+        if (age < 0) {
+            throw new IllegalArgumentException("La edad no puede ser negativa");
+        }
+
+        if (age < 18) {
+            throw new IllegalArgumentException("Solo aceptamos mayores de edad");
+        }
+    }
+    }
