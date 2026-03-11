@@ -60,7 +60,7 @@ public class AppController {
         try{
             List<String> items = service.loadForListView();
             data.setAll(items);
-            lblMsg.setText("Datos cargados correctamente");
+            lblMsg.setText("Datos cargados correctamente.");
             lblMsg.setStyle("-fx-text-fill: green");
         } catch (IOException e) {
             lblMsg.setText("Error: "+e.getMessage());
