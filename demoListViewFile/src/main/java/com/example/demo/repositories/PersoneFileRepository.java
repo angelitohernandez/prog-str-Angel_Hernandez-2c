@@ -33,6 +33,4 @@ public class PersoneFileRepository {
     public void saveFile(List<String> lines ) throws IOException {
         Files.write(pathFile, lines, StandardCharsets.UTF_8, StandardOpenOption.TRUNCATE_EXISTING);
     }
-
-
 }

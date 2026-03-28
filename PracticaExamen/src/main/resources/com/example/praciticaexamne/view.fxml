@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.awt.Insets?>
+<?import java.awt.TextField?>
+<?import java.awt.Button?>
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.praciticaexamne.Controller.appController">
+   <children>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#buscar" text="Buscar" GridPane.columnIndex="2" />
+            <Label text="Buscar contactos:" />
+            <TextField fx:id="buscarCon" GridPane.columnIndex="1" />
+            <Label fx:id="Mensaje" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nombre:" />
+            <Label text="Telefono:" GridPane.rowIndex="1" />
+            <Label text="Parentesco:" GridPane.rowIndex="2" />
+            <TextField fx:id="nombre" GridPane.columnIndex="1" />
+            <TextField fx:id="telefono" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="parentestos" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ComboBox>
+         </children>
+      </GridPane>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#actualizar" text="Actualizar" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#agregar" text="Agregar" />
+            <Button mnemonicParsing="false" onAction="#eliminar" text="Eliminar" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onAction="#limpiar" text="Limpiar" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <ListView fx:id="listaContactos" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</VBox>
